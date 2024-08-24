@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  background-color: #2e073f;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Utility class start  */
+.hide {
+  display: none;
+}
+
+.boxes:disabled.win {
+  background-color: #27ff81;
+  color: #62138d !important;
+}
+.draw {
+  color: #fabc3f !important;
+}
+
+/* Utility class end  */
+
+h1 {
+  text-align: center;
+  margin: 2rem;
+}
+
+.new-game-container {
+  text-align: center;
+}
+
+.new-game-container h2 {
+  color: #27ff81;
+  margin: 1rem;
+}
+
+.new-game-btn {
+  margin-bottom: 2rem;
+}
+.container {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.game {
+  height: 60vmin;
+  width: 60vmin;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(auto, 10rem));
+  gap: 1rem;
+}
+.boxes {
+  width: 18vmin;
+  aspect-ratio: 1/1;
+  border: none;
+  background-color: #ebd3f8;
+  border-radius: 1rem;
+  font-size: 8vmin;
+}
+.boxes:hover {
+  background-color: #f9efff;
+  box-shadow: 0 0 1rem rgba(193, 193, 193, 0.5);
+  cursor: pointer;
+}
+.boxes:disabled {
+  background-color: #ebd3f8e5;
+  color: #2e073f;
+}
+.boxes:disabled:hover {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  cursor: default;
+}
+.boxes:disabled.playerO {
+  color: #ac49e1cd;
+}
+#reset-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+#reset-btn,
+.new-game-btn {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  padding: 1.25rem;
+  font-size: 1.25rem;
+  background-color: #ad49e1;
+  color: #ebd3f8;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease-out;
+}
+#reset-btn:hover,
+.new-game-btn:hover {
+  font-weight: 600;
+  transition: 0.2s ease-out;
+  background-color: #ebd3f8;
+  color: #2e073f;
+  box-shadow: 0 0 1rem rgba(193, 193, 193, 0.5);
+}
+
+footer {
+  margin-top: auto;
+}
+footer p {
+  padding: 1rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 600px) {
+  .game {
+    height: 90vmin;
+    width: 90vmin;
+    gap: 0.6rem;
+  }
+  .boxes {
+    width: 28vmin;
+    font-size: 14vmin;
+    border-radius: 0.6rem;
+  }
+  footer p {
+    font-size: 0.8rem;
+  }
+}
