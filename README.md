@@ -1,6 +1,6 @@
 # Tic Tac Toe Game
 
-**🎮Play for free: https://tic-tac-toe.pages.dev/**
+**🎮Play for free: https://tic-tac-toe-1bc.pages.dev/**
 
 A simple, interactive Tic Tac Toe game built with JavaScript, HTML, and CSS.
 
