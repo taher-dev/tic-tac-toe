@@ -29,7 +29,10 @@ body {
   color: #62138d !important;
 }
 .draw {
-  color: #fabc3f !important;
+  color: #fabc3f;
+}
+.win {
+  color: #27ff81;
 }
 
 /* Utility class end  */
@@ -44,7 +47,6 @@ h1 {
 }
 
 .new-game-container h2 {
-  color: #27ff81;
   margin: 1rem;
 }
 

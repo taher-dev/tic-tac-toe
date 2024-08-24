@@ -31,9 +31,10 @@ boxes.forEach((box) => {
     }
     box.disabled = true;
 
+    if (!checkWinner()) {
+      checkDraw();
+    }
     checkWinner();
-
-    checkDraw();
   });
 });
 
@@ -67,6 +68,7 @@ const checkWinner = () => {
       turnContainer.classList.add("hide");
       resetBtn.classList.add("hide");
       newContainer.classList.remove("hide");
+      h2.classList.add("win");
       h2.innerHTML = boxes[a].innerHTML + " is the WINNER!";
     }
   }
@@ -96,6 +98,7 @@ const newGame = () => {
   turnContainer.classList.remove("hide");
   resetBtn.classList.remove("hide");
   h2.classList.remove("draw");
+  h2.classList.remove("win");
   boxEnabled();
 };
 const reset = () => {
