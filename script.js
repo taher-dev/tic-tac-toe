@@ -1,6 +1,8 @@
 let boxes = document.querySelectorAll(".boxes");
 let newContainer = document.querySelector(".new-game-container");
 let h2 = newContainer.querySelector("h2");
+let turnContainer = document.querySelector(".turn-container");
+let turn = turnContainer.querySelector(".turn");
 let newBtn = document.querySelector(".new-game-btn");
 let resetBtn = document.querySelector("#reset-btn");
 const winConditions = [
@@ -18,10 +20,12 @@ let playerO = true;
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
     if (playerO) {
+      turn.innerHTML = "X";
       box.innerHTML = "O";
       box.classList.add("playerO");
       playerO = false;
     } else {
+      turn.innerHTML = "O";
       box.innerHTML = "X";
       playerO = true;
     }
@@ -60,6 +64,7 @@ const checkWinner = () => {
       boxes[b].classList.add("win");
       boxes[c].classList.add("win");
       boxDisabled();
+      turnContainer.classList.add("hide");
       resetBtn.classList.add("hide");
       newContainer.classList.remove("hide");
       h2.innerHTML = boxes[a].innerHTML + " is the WINNER!";
@@ -76,6 +81,7 @@ const checkDraw = () => {
   });
   if (count == 9) {
     boxDisabled();
+    turnContainer.classList.add("hide");
     resetBtn.classList.add("hide");
     newContainer.classList.remove("hide");
     h2.classList.add("draw");
@@ -85,13 +91,16 @@ const checkDraw = () => {
 
 const newGame = () => {
   playerO = true;
+  turn.innerHTML = "O";
   newContainer.classList.add("hide");
+  turnContainer.classList.remove("hide");
   resetBtn.classList.remove("hide");
   h2.classList.remove("draw");
   boxEnabled();
 };
 const reset = () => {
   playerO = true;
+  turn.innerHTML = "O";
   boxEnabled();
 };
 
